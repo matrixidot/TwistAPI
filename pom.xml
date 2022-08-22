@@ -6,7 +6,7 @@
 
     <groupId>me.neo</groupId>
     <artifactId>TwistAPI</artifactId>
-    <version>1.0.0-Alpha</version>
+    <version>0.1.0-Alpha</version>
     <packaging>jar</packaging>
 
     <name>TwistAPI</name>
@@ -23,8 +23,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -41,7 +41,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <minimizeJar>true</minimizeJar>
+                    <minimizeJar>false</minimizeJar>
                     <relocations>
                         <relocation>
                             <pattern>dev.jorel.commandapi</pattern>

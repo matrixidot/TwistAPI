@@ -24,7 +24,6 @@ public class CraftListener implements Listener {
         if (TwistAPI.items.asMap().containsKey(event.getRecipe().getResult())) {
             // If it does then it will check if the player has the twist linked with the itemstack
             checks(event, TwistAPI.items.asMap().get(event.getRecipe().getResult()));
-
         }
     }
 
