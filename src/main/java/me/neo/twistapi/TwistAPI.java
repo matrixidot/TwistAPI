@@ -68,4 +68,9 @@ public class TwistAPI extends JavaPlugin {
                 // Replaces suggestions with predetermined ones. When hovering over these it shows the below information
                 .replaceSuggestions(ArgumentSuggestions.strings(args)));
     }
+
+    public static void linkItemToTwist(ItemStack item, String twist)  {
+        items.put(item, twist);
+
+    }
 }

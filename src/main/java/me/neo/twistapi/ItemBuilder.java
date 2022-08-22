@@ -93,8 +93,6 @@ public class ItemBuilder {
      */
     public ItemStack build() {
         this.updateItemMeta();
-        TwistAPI.items.asMap().put(this.item, Collections.singleton(this.twist));
-        System.out.println("Twist " + TwistAPI.items.asMap().get(this.item));
         return this.item;
     }
 }
