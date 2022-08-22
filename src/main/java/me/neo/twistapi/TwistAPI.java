@@ -63,6 +63,10 @@ public class TwistAPI extends JavaPlugin {
         // Plugin shutdown logic
     }
 
+    /**
+     *
+     * @param args Arguments for the commands /addTwist and /revokeTwist
+     */
     public static void addArguments(String[] args) {
         // Twist argument
         arguments.add(new StringArgument("Twist")
@@ -70,6 +74,11 @@ public class TwistAPI extends JavaPlugin {
                 .replaceSuggestions(ArgumentSuggestions.strings(args)));
     }
 
+    /**
+     *
+     * @param item ItemStack to link
+     * @param twist String to link to ItemStack. Note: The string must be one of the strings from the array in the addArguments() method
+     */
     public static void linkItemToTwist(ItemStack item, String twist)  {
         items.put(item, twist);
 

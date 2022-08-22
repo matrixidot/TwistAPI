@@ -16,7 +16,7 @@ public class CraftListener implements Listener {
     /**
      * Checks if the player is allowed to craft the item.
      * Will not affect vanilla items
-     * @param event CraftItemEvent
+     * @param event <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/CraftItemEvent.html">CraftItemEvent</a>
      */
     @EventHandler
     public void onCraft(CraftItemEvent event) {

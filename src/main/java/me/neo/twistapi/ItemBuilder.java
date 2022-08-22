@@ -8,7 +8,6 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Class that houses the methods for the ItemBuilder builder
@@ -17,12 +16,11 @@ public class ItemBuilder {
     private ItemStack item;
     private ItemMeta meta;
     private PersistentDataContainer container;
-    private String twist;
 
     /**
      *
-     * @param mat Material of the itemstack
-     * @param amount Amount of the itemstack
+     * @param mat Material of the ItemStack
+     * @param amount Amount of the ItemStack
      */
     public ItemBuilder(Material mat, int amount) {
         this.item = new ItemStack(mat, amount);
@@ -65,24 +63,13 @@ public class ItemBuilder {
 
     /**
      * Adds a persistent data container
-     * @param key The String value of a NamespacedKey
-     * @param type The type of PersistentDataType to use
+     * @param key The String value of a <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/NamespacedKey.html">NamespacedKey</a>
+     * @param type The type of <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/persistence/PersistentDataType.html">PersistentDataType</a> to use
      * @param value The value of the persistent data container using the specified key and type
      * @return Instance of ItemBuilder
      */
     public ItemBuilder addDataContainer(NamespacedKey key, PersistentDataType type, Object value) {
         this.container.set(key, type, value);
-        return this;
-    }
-
-    /**
-     * Used for setting the twist of an item
-     * This method must ALWAYS be called in order for the items to function as intended
-     * @param twist The twist (Custom Scenario) to be linked to the item. Must be the same as the twist specified in the constructor in onLoad() for your plugins
-     * @return Instance of ItemBuilder
-     */
-    public ItemBuilder setTwist(String twist) {
-        this.twist = twist;
         return this;
     }
 

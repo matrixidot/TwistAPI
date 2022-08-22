@@ -14,8 +14,8 @@ public class TwistLinkingCommands {
 
 
     /**
-     *
-     *
+     * Constructor for internal use
+     * Call this in your onLoad(){}
      */
     public TwistLinkingCommands() {
         link();
