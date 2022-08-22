@@ -1,5 +1,0 @@
-name: TwistAPI
-version: '${project.version}'
-main: me.neo.twistapi.TwistAPI
-api-version: 1.19
-authors: [ N3E0 ]
