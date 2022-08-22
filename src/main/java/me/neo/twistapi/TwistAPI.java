@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public class TwistAPI extends JavaPlugin {
      * ItemBuilder takes care of this but you can add it manually with
      * Neos_Scenarios.items.put(ItemStack, String)
      */
-    public static Multimap<ItemStack, String> items = HashMultimap.create();
+    public static HashMap<ItemStack, String> items = new HashMap<>();
     /**
      *
      */

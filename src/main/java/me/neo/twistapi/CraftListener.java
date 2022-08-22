@@ -21,24 +21,25 @@ public class CraftListener implements Listener {
     @EventHandler
     public void onCraft(CraftItemEvent event) {
         // Checks if the items hashmap contains the given itemstack
-        if (TwistAPI.items.asMap().containsKey(event.getRecipe().getResult())) {
+        if (TwistAPI.items.containsKey(event.getRecipe().getResult())) {
             // If it does then it will check if the player has the twist linked with the itemstack
-            checks(event, TwistAPI.items.asMap().get(event.getRecipe().getResult()));
+            checks(event, TwistAPI.items.get(event.getRecipe().getResult()));
         }
     }
 
-    private void checks(CraftItemEvent event, Collection<String> twist) {
+    private void checks(CraftItemEvent event, String twist) {
         Player player = (Player) event.getWhoClicked();
         // If the player has no twists
         if (!TwistAPI.PlayerLinkedTwists.containsKey(player)) {
             event.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "You dont have access to this recipe");
+            player.sendMessage(ChatColor.RED + "You dont have a twist");
             return;
         }
         // IF the player has a twist but not the correct one
-        if (!TwistAPI.PlayerLinkedTwists.containsEntry(player, twist)) {
+        if (!(TwistAPI.PlayerLinkedTwists.containsEntry(player, twist))) {
             event.setCancelled(true);
             player.sendMessage(ChatColor.RED + "You dont have access to this recipe!");
+            player.sendMessage(ChatColor.RED + "Your twist: " + TwistAPI.PlayerLinkedTwists.asMap().get(player) + " You need " + twist);
         }
     }
 }
