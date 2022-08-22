@@ -30,18 +30,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
+                        <id>shade</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                    <relocations>
+                        <relocation>
+                            <pattern>dev.jorel.commandapi</pattern>
+                            <!-- TODO: Change this to my own package name -->
+                            <shadedPattern>me.neo.neos_scenarios.commandapi</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
@@ -69,6 +77,11 @@
             <artifactId>spigot-api</artifactId>
             <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.jorel</groupId>
+            <artifactId>commandapi-shade</artifactId>
+            <version>8.5.1</version>
         </dependency>
     </dependencies>
 </project>
