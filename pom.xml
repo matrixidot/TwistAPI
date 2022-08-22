@@ -12,7 +12,7 @@
     <name>TwistAPI</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -46,7 +46,7 @@
                         <relocation>
                             <pattern>dev.jorel.commandapi</pattern>
                             <!-- TODO: Change this to my own package name -->
-                            <shadedPattern>me.neo.neos_scenarios.commandapi</shadedPattern>
+                            <shadedPattern>me.neo.twistapi.commandapi</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
