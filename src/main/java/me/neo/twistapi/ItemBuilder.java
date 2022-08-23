@@ -61,7 +61,7 @@ public class ItemBuilder {
 
     /**
      * Will try to fail silently if Enchant name is incorrect
-     * @param enchant The String of the enchantment to add to the item <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html>List of Enchants</a>
+     * @param enchant The String of the enchantment to add to the item <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html">List of Enchants</a>
      * @param level The Level of the applied Enchant
      * @return Instance of ItemBuilder
      */
@@ -88,7 +88,7 @@ public class ItemBuilder {
 
     /**
      *
-     * @param modelData The <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#setCustomModelData(java.lang.Integer)>Custom Model Data</a> number
+     * @param modelData The <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#setCustomModelData(java.lang.Integer)">Custom Model Data number</a>
      * @return Instance of ItemBuilder
      */
     public ItemBuilder setCustomModelData(int modelData) {
@@ -98,7 +98,7 @@ public class ItemBuilder {
 
     /**
      *
-     * @param flag The <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html>Item Flags</a>
+     * @param flag The <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html">Item Flags</a>
      * @return instance of ItemBuilder
      */
     public ItemBuilder addItemFlag(String flag) {
@@ -121,6 +121,11 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     *
+     * @param unbreakable Boolean for if the item should be unbreakable. Only use this method to add unbreakability as it is false by default
+     * @return Instance of ItemBuilder
+     */
     public ItemBuilder setUnbreakable(boolean unbreakable) {
         this.meta.setUnbreakable(unbreakable);
         return this;
